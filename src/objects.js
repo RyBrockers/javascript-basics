@@ -1,41 +1,68 @@
 const createPerson = (name, age) => {
-  // your code here
+  const person = {
+    name: name,
+    age: age
+  }
+  return person;
 };
 
 const getName = (object) => {
-  // your code here
+  return object.name;
 };
 
 const getProperty = (property, object) => {
-  // your code here
+  return object[property];
 };
-
 const hasProperty = (property, object) => {
-  // your code here
+  return object.hasOwnProperty([property]);
 };
 
 const isOver65 = (person) => {
-  // your code here
+  if (person.age > 65) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const getAges = (people) => {
-  // your code here
+  const ages = people.map((person) => {
+    return getProperty('age', person);
+  })
+  return ages;
+
 };
 
 const findByName = (name, people) => {
-  // your code here
+  return people.find((person) => person.name === name);
+
+
 };
 
+
 const findHondas = (cars) => {
-  // your code here
+  return cars.filter(cars => cars.manufacturer === "Honda")
 };
 
 const averageAge = (people) => {
-  // your code here
+
+  const total = getAges(people).reduce((acc, age) => {
+    return acc + age;
+  }, 0)
+  return total / people.length;
+
 };
 
 const createTalkingPerson = (name, age) => {
-  // your code here
+  const person = createPerson(name, age);
+
+  // you can do this part
+  //thats is isnt it? no
+  person.introduce = () => {
+    return `Hi Fred, my name is ${name} and I am ${age}!`;
+  };
+
+  return person;
 };
 
 module.exports = {
