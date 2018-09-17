@@ -59,28 +59,31 @@ const isEven = (a) => {
 };
 
 const isSquare = (a) => {
+  return Math.sqrt(a) % 1 === 0;
+}
 
-  if (Math.sqrt(a) > 0) {
+const startsWith = (char, string) => {
+
+
+  return string.startsWith(char);
+
+};
+
+const containsVowels = (string) => {
+
+  return (string.substring(string)).match(/[aeiou]/i) ? true : false;
+
+};
+
+const isLowerCase = (string) => {
+  if (string === string.toLowerCase()) {
     return true;
   } else {
     return false;
   }
-};
 
 
 
-const startsWith = (char, string) => {
-  // your code here
-};
-
-const containsVowels = (string) => {
-  return string.filter(item => {
-    return (item.substring(0, 1)).match(/[aeiou]/i) ? true : false;
-  });
-};
-
-const isLowerCase = (string) => {
-  // your code here
 };
 
 module.exports = {
