@@ -56,8 +56,6 @@ const averageAge = (people) => {
 const createTalkingPerson = (name, age) => {
   const person = createPerson(name, age);
 
-  // you can do this part
-  //thats is isnt it? no
   person.introduce = () => {
     return `Hi Fred, my name is ${name} and I am ${age}!`;
   };
